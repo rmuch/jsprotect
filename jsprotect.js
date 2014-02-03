@@ -14,12 +14,12 @@ function jsprotect_decode(str) {
 function jsprotect_apply(id) {
     var tag = document.getElementById(id);
 
-    var dataAttr = tag.getAttribute('jsprotect-data');
+    var dataAttr = tag.getAttribute('data-jsprotect-inner');
     if (dataAttr) {
         tag.innerHTML = jsprotect_decode(dataAttr.valueOf());
     }
 
-    var hrefAttr = tag.getAttribute('jsprotect-href');
+    var hrefAttr = tag.getAttribute('data-jsprotect-href');
     if (hrefAttr) {
         tag.setAttribute('href', jsprotect_decode(hrefAttr.valueOf()));
     }
